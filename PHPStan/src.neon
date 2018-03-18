@@ -1,0 +1,5 @@
+parameters:
+    customRulesetUsed: true
+
+includes:
+    - phar://phpstan.phar/conf/config.levelmax.neon

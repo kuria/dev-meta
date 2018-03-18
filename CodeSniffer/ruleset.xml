@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<ruleset name="Kuria Standard" namespace="Kuria\DevMeta\CodeSniffer">
+
+    <!-- Include PSR-1 and PSR-2, with exceptions -->
+    <rule ref="PSR1" />
+    <rule ref="PSR2">
+        <exclude name="Generic.ControlStructures.InlineControlStructure.NotAllowed" />
+        <exclude name="Generic.Formatting.DisallowMultipleStatements.SameLine" />
+        <exclude name="PSR2.Classes.PropertyDeclaration.ScopeMissing" />
+        <exclude name="PSR2.ControlStructures.ControlStructureSpacing.SpacingAfterOpenBrace" />
+        <exclude name="Squiz.Scope.MethodScope.Missing" />
+        <exclude name="Squiz.Functions.MultiLineFunctionDeclaration.ContentAfterBrace" />
+        <exclude name="Squiz.WhiteSpace.ScopeClosingBrace.ContentBefore" />
+    </rule>
+
+    <!-- Line length -->
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="150" />
+            <property name="absoluteLineLimit" value="0" />
+        </properties>
+    </rule>
+
+    <!-- Whitespace -->
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace">
+        <properties>
+            <property name="ignoreBlankLines" value="false"/>
+        </properties>
+    </rule>
+
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.StartFile">
+        <severity>5</severity>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EndFile">
+        <severity>5</severity>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EmptyLines">
+        <severity>5</severity>
+    </rule>
+        
+    <!-- Doc comments -->
+    <rule ref="Generic.Commenting.DocComment.Empty" />
+    <rule ref="Generic.Commenting.DocComment.SpacingAfter" />
+    <rule ref="Generic.Commenting.DocComment.ShortNotCapital" />
+    <rule ref="Generic.Commenting.DocComment.LongNotCapital" />
+    <rule ref="Generic.Commenting.DocComment.SpacingBetween" />
+    <rule ref="Generic.Commenting.DocComment.SpacingBeforeTags" />
+    <rule ref="Generic.Commenting.DocComment.ParamGroup" />
+    <rule ref="Generic.Commenting.DocComment.TagsNotGrouped" />
+    
+    <!-- Skip test fixtures -->
+    <exclude-pattern>*/tests/*Fixtures/*</exclude-pattern>
+    
+    <!-- Allow multiple classes per file in tests -->
+    <rule ref="PSR1.Classes.ClassDeclaration.MultipleClasses">
+        <exclude-pattern>*/tests/*</exclude-pattern>
+    </rule>
+
+</ruleset>
