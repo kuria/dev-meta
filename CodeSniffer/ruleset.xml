@@ -47,6 +47,9 @@
     <rule ref="Generic.Commenting.DocComment.SpacingBeforeTags" />
     <rule ref="Generic.Commenting.DocComment.ParamGroup" />
     <rule ref="Generic.Commenting.DocComment.TagsNotGrouped" />
+
+    <!-- Arrays -->
+    <rule ref="Generic.Arrays.DisallowLongArraySyntax" />
     
     <!-- Skip test fixtures -->
     <exclude-pattern>*/tests/*Fixtures/*</exclude-pattern>
