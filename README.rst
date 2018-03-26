@@ -7,15 +7,9 @@ Common Kuria library development dependencies and scripts.
 Installation
 ************
 
-.. code:: javascript
+.. code:: bash
 
-   {
-       "name": "acme/example",
-       // ...
-       "require-dev": {
-           "kuria/dev-meta": "^0.1.0"
-       }
-   }
+  composer require --dev kuria/dev-meta
 
 
 Usage
