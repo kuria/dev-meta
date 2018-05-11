@@ -50,6 +50,7 @@
 
     <!-- Arrays -->
     <rule ref="Generic.Arrays.DisallowLongArraySyntax" />
+    <rule ref="Squiz.Arrays.ArrayDeclaration.NoCommaAfterLast" />
     
     <!-- Skip test fixtures -->
     <exclude-pattern>*/tests/*Fixtures/*</exclude-pattern>
