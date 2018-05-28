@@ -51,7 +51,7 @@ class StrictCamelCapsSniff implements Sniff
     private function getCorrectName(string $badName): string
     {
         return preg_replace_callback(
-            '{([A-Z]+)([A-Z]|$)}',
+            '{([A-Z]+)([A-Z]|$)}D',
             function (array $match) {
                 return sprintf(
                     '%s%s%s',
