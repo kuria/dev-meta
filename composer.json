@@ -45,7 +45,7 @@
             "tests.paths": ["tests"],
             "tests.phpstan.config": "{$vendor-dir}/kuria/dev-meta/PHPStan/tests.neon",
             "tests.phpstan.options": [],
-            "phpcs.args": ["--standard={$phpcs.standard}", "-p", "--colors", "{$phpcs.options}", "{$src.paths}", "{$tests.paths}"],
+            "phpcs.args": ["--standard={$phpcs.standard}", "-p", "-s", "--colors", "{$phpcs.options}", "{$src.paths}", "{$tests.paths}"],
             "phpcs.standard": "{$vendor-dir}/kuria/dev-meta/CodeSniffer/ruleset.xml",
             "phpcs.options": []
         }
