@@ -37,7 +37,12 @@
     <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace.EmptyLines">
         <severity>5</severity>
     </rule>
-        
+    <rule ref="Squiz.WhiteSpace.MemberVarSpacing">
+        <properties>
+            <property name="spacingBeforeFirst" value="0"/>
+        </properties>
+    </rule>
+
     <!-- Doc comments -->
     <rule ref="Generic.Commenting.DocComment.Empty" />
     <rule ref="Generic.Commenting.DocComment.SpacingAfter" />
