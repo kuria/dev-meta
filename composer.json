@@ -1,20 +1,21 @@
 {
     "name": "kuria/dev-meta",
-    "description": "Common Kuria library development dependencies and scripts",
+    "description": "Common development dependencies and scripts for Kuria libraries",
     "license": "MIT",
     "require": {
         "php": ">=7.1",
         "ext-mbstring": "*",
         "ext-tokenizer": "*",
         "kuria/composer-pkg-scripts": "^1.0",
-        "phpunit/phpunit": "^7.2.5",
+        "kuria/phpunit-extras": "^1.0",
+        "phpunit/phpunit": "^7.3.5",
         "phpstan/phpstan-shim": "^0.9.2",
         "phpstan/phpstan-phpunit": "^0.9.4",
-        "squizlabs/php_codesniffer": "^3.2.3"
+        "squizlabs/php_codesniffer": "^3.3.1"
     },
     "autoload": {
         "psr-4": {
-            "Kuria\\DevMeta\\CodeSniffer\\": "CodeSniffer/Sniffs"
+            "Kuria\\DevMeta\\": "src"
         }
     },
     "extra": {
@@ -24,7 +25,7 @@
             "coverage": "@phpunit:coverage",
             "cs": ["@phpcs:check", "@phpstan:src", "@phpstan:tests"],
             "cs:fix": ["@phpcs:fix"],
-            "phpunit": "phpunit --colors",
+            "phpunit": "phpunit --colors=always",
             "phpunit:coverage": "phpunit --coverage-html=coverage --coverage-clover=coverage/clover.xml",
             "phpstan:src": "phpstan analyze --ansi --configuration={$src.phpstan.config} {$src.phpstan.options} {$src.paths}",
             "phpstan:tests": "phpstan analyze --ansi --configuration={$tests.phpstan.config} {$tests.phpstan.options} {$tests.paths}",
@@ -40,13 +41,13 @@
         },
         "package-scripts-vars": {
             "src.paths": ["src"],
-            "src.phpstan.config": "{$vendor-dir}/kuria/dev-meta/PHPStan/src.neon",
+            "src.phpstan.config": "{$vendor-dir}/kuria/dev-meta/conf/phpstan-src.neon",
             "src.phpstan.options": [],
             "tests.paths": ["tests"],
-            "tests.phpstan.config": "{$vendor-dir}/kuria/dev-meta/PHPStan/tests.neon",
+            "tests.phpstan.config": "{$vendor-dir}/kuria/dev-meta/conf/phpstan-tests.neon",
             "tests.phpstan.options": [],
             "phpcs.args": ["--standard={$phpcs.standard}", "-p", "-s", "--colors", "{$phpcs.options}", "{$src.paths}", "{$tests.paths}"],
-            "phpcs.standard": "{$vendor-dir}/kuria/dev-meta/CodeSniffer/ruleset.xml",
+            "phpcs.standard": "{$vendor-dir}/kuria/dev-meta/src/CodeSniffer/ruleset.xml",
             "phpcs.options": []
         }
     }

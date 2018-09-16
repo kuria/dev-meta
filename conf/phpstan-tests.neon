@@ -1,6 +1,7 @@
 parameters:
     customRulesetUsed: true
     excludes_analyse:
+        - */bootstrap.php
         - */Fixtures/*
 
 includes:
