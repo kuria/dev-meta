@@ -4,7 +4,6 @@ namespace Kuria\DevMeta\CodeSniffer\Naming;
 
 use PHP_CodeSniffer\Files\File;
 use PHP_CodeSniffer\Sniffs\Sniff;
-use PHP_CodeSniffer\Util\Common;
 
 /**
  * Suplemental strict camel caps sniff
