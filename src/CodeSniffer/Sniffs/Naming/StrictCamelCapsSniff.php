@@ -53,12 +53,18 @@ class StrictCamelCapsSniff implements Sniff
         return preg_replace_callback(
             '{([A-Z]+)([A-Z]|$)}D',
             function (array $match) {
-                return sprintf(
-                    '%s%s%s',
-                    mb_substr($match[1], 0, 1),
-                    mb_strtolower(mb_substr($match[1], 1)),
-                    $match[2]
-                );
+                return mb_strlen($match[1]) > 1
+                    ? sprintf(
+                        '%s%s%s',
+                        mb_substr($match[1], 0, 1),
+                        mb_strtolower(mb_substr($match[1], 1)),
+                        $match[2]
+                    )
+                    : sprintf(
+                        '%s%s',
+                        $match[1],
+                        mb_strtolower($match[2])
+                    );
             },
             $badName
         );
